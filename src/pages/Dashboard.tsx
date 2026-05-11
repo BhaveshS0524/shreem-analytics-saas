@@ -1,4 +1,11 @@
-import RevenueLineChart from '../components/dashboard/RevenueLineChart'
+import { lazy, Suspense } from 'react'
+
+const RevenueLineChart = lazy(
+  () =>
+    import(
+      '../components/dashboard/RevenueLineChart'
+    )
+)
 
 import MonthlyGrowthChart from '../components/dashboard/MonthlyGrowthChart'
 
@@ -153,7 +160,9 @@ export default function Dashboard() {
   }}
 />
 
-<RevenueLineChart data={sales} />
+<Suspense fallback={<p>Loading chart...</p>}>
+  <RevenueLineChart data={sales} />
+</Suspense>
       <hr
         style={{
           marginTop: 40,
