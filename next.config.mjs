@@ -1,15 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable static optimization for the initial launch
-  output: 'standalone', 
+  // Disable minification to prevent the build from hanging
+  swcMinify: false,
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // This bypasses the hang during "Creating an optimized production build"
-  staticPageGenerationTimeout: 1000,
+  // Essential for standalone deployment on Vercel
+  output: 'standalone',
 };
 
 export default nextConfig;
