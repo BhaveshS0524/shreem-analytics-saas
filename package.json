@@ -1,17 +1,27 @@
-npm install --save-dev typescript @types/react @types/node
 {
   "name": "shreem-analytics",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.43.2",
     "next": "14.2.3",
-    "react": "^18",
-    "react-dom": "^18",
-    "@supabase/supabase-js": "^2.43.2"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.3",
+    "typescript": "^5.5.4"
   }
 }
